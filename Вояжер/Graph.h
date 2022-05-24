@@ -93,7 +93,7 @@ void Graph::run()
     setlocale(LC_ALL, "ru");
     input();
     for (int i = 0; i < size; i++) {
-        cout << "# Øàã" << i + 1 << ":" << endl;
+        cout <<  "# Ð¨Ð°Ð³" << i + 1 << ":" << endl;
         computing();
     }
     output();
@@ -118,23 +118,23 @@ void Graph::computing()
     std::vector<int> dj(current[0].size());
     Point mp;
 
-    cout << "* Ïîèñê ìèí. ýëåìåíòîâ â ñòðîêå" << endl;
+    cout << "* ÐŸÐ¾Ð¸ÑÐº Ð¼Ð¸Ð½. ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð² ÑÑ‚Ñ€Ð¾ÐºÐµ" << endl;
     find_di(di);
-    cout << "* Âû÷èòàíèå ìèí. ýëåìåíòîâ â ñòðîêå" << endl;
+    cout << "* Ð’Ñ‹Ñ‡Ð¸Ñ‚Ð°Ð½Ð¸Ðµ Ð¼Ð¸Ð½. ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð² ÑÑ‚Ñ€Ð¾ÐºÐµ" << endl;
     red_di(di);
     print_table();
 
-    cout << "* Ïîèñê ìèí. ýëåìåíòîâ â ñòîëáöå" << endl;
+    cout << "* ÐŸÐ¾Ð¸ÑÐº Ð¼Ð¸Ð½. ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð² ÑÑ‚Ð¾Ð»Ð±Ñ†Ðµ" << endl;
     find_dj(dj);
-    cout << "* Âû÷èòàíèå ìèí. ýëåìåíòîâ â ñòîëáöå" << endl;
+    cout << "* Ã‚Ã»Ã·Ã¨Ã²Ã Ã­Ã¨Ã¥ Ã¬Ã¨Ã­. Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã®Ã¢ Ã¢ Ã±Ã²Ã®Ã«Ã¡Ã¶Ã¥" << endl;
     red_dj(dj);
     print_table();
 
-    cout << "* Îöåíêà íóëåé\n";
+    cout << "* ÃŽÃ¶Ã¥Ã­ÃªÃ  Ã­Ã³Ã«Ã¥Ã©\n";
     estimate(mp);
-    cout << " * Ñîõðàíåíèå ïóòè : (" << mp.i + 1 << "->" << mp.j + 1 << ")" << endl;
+    cout << " * Ã‘Ã®ÃµÃ°Ã Ã­Ã¥Ã­Ã¨Ã¥ Ã¯Ã³Ã²Ã¨ : (" << mp.i + 1 << "->" << mp.j + 1 << ")" << endl;
     save_path(mp);
-    cout << "* Èñêëþ÷åíèå ñòðîêè è ñòîëáöà" << endl;
+    cout << "* ÃˆÃ±ÃªÃ«Ã¾Ã·Ã¥Ã­Ã¨Ã¥ Ã±Ã²Ã°Ã®ÃªÃ¨ Ã¨ Ã±Ã²Ã®Ã«Ã¡Ã¶Ã " << endl;
     reduction(mp);
     print_table();
 }
@@ -267,10 +267,10 @@ void Graph::print_table() {
 void Graph::output()
 {
     current = save_paths;
-    cout << " Èñõîäíàÿ òàáëèöà:" << endl;
+    cout << " ÃˆÃ±ÃµÃ®Ã¤Ã­Ã Ã¿ Ã²Ã Ã¡Ã«Ã¨Ã¶Ã :" << endl;
     print_table();
     std::sort(fast.begin(), fast.end());
-    cout << " Ïóòè:" << endl;
+    cout << " ÃÃ³Ã²Ã¨:" << endl;
     int i = 0, sum = 0;
     int tmp = 0;
     fastWay.push_back(char('A' + tmp));
@@ -282,7 +282,7 @@ void Graph::output()
         i = fast[i].j;
 
     } while (i != 0);
-    cout << " Ïóòü: " << sum << endl;
+    cout << " ÃÃ³Ã²Ã¼: " << sum << endl;
     for (list<char>::iterator i = fastWay.begin(); i != fastWay.end(); i++) {
         cout << (*i) << " ";
     }
