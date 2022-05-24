@@ -9,9 +9,9 @@
 using namespace std;
 using namespace sf;
 
-7 {
+class Node{
 private:
-    char ñ; 
+    char c; 
     int x; 
     int y;
     sf::CircleShape circle; 
@@ -26,7 +26,7 @@ private:
 
         font.loadFromFile("Bahnschrift.ttf");
         text.setFillColor(sf::Color::White);
-        text.setString(ñ);
+        text.setString(c);
         text.setFont(font);
         text.setCharacterSize(radius);
         text.setOutlineColor(Color::White);
@@ -35,15 +35,15 @@ private:
 public:
     Node() {}
 
-    Node(char ñ, int radius, int x, int y) {
-        this->ñ = ñ;
+    Node(char c, int radius, int x, int y) {
+        this->c = c;
         this->radius = radius;
         this->x = x;
         this->y = y;
     }
    
     Node(const Node& node) {
-        this->ñ = node.ñ;
+        this->c = node.c;
         this->radius = node.radius;
         this->x = node.x;
         this->y = node.y;
