@@ -93,7 +93,7 @@ void Graph::run()
     setlocale(LC_ALL, "ru");
     input();
     for (int i = 0; i < size; i++) {
-        cout <<  "# Шаг" << i + 1 << ":" << endl;
+        cout << "Шаг " << i + 1 << ":" << endl;
         computing();
     }
     output();
@@ -118,23 +118,16 @@ void Graph::computing()
     std::vector<int> dj(current[0].size());
     Point mp;
 
-    cout << "* Поиск мин. элементов в строке" << endl;
     find_di(di);
-    cout << "* Вычитание мин. элементов в строке" << endl;
     red_di(di);
-    print_table();
 
-    cout << "* Поиск мин. элементов в столбце" << endl;
     find_dj(dj);
-    cout << "* Âû÷èòàíèå ìèí. ýëåìåíòîâ â ñòîëáöå" << endl;
     red_dj(dj);
-    print_table();
 
-    cout << "* Îöåíêà íóëåé\n";
     estimate(mp);
-    cout << " * Ñîõðàíåíèå ïóòè : (" << mp.i + 1 << "->" << mp.j + 1 << ")" << endl;
+    cout << "Сохранение пути : (" << mp.i + 1 << "->" << mp.j + 1 << ")" << endl;
     save_path(mp);
-    cout << "* Èñêëþ÷åíèå ñòðîêè è ñòîëáöà" << endl;
+    cout << "Исключение строки и столбца" << endl;
     reduction(mp);
     print_table();
 }
@@ -153,9 +146,6 @@ void Graph::find_di(std::vector<int>& di)
         else
             di[i] = 0;
     }
-    for (int i = 0; i < di.size(); i++)
-        cout << "di: " << di[i] << " ";
-    cout << endl;
 }
 
 void Graph::red_di(std::vector<int>& di)
@@ -180,9 +170,6 @@ void Graph::find_dj(std::vector<int>& dj)
         else
             dj[i] = 0;
     }
-    for (int i = 0; i < dj.size(); i++)
-        cout << "dj: " << dj[i] << " ";
-    cout << endl;
 }
 
 void Graph::red_dj(std::vector<int>& dj)
@@ -267,10 +254,10 @@ void Graph::print_table() {
 void Graph::output()
 {
     current = save_paths;
-    cout << " Èñõîäíàÿ òàáëèöà:" << endl;
+    cout << " Исходная таблица:" << endl;
     print_table();
     std::sort(fast.begin(), fast.end());
-    cout << " Ïóòè:" << endl;
+    cout << " Пути:" << endl;
     int i = 0, sum = 0;
     int tmp = 0;
     fastWay.push_back(char('A' + tmp));
@@ -282,9 +269,6 @@ void Graph::output()
         i = fast[i].j;
 
     } while (i != 0);
-    cout << " Ïóòü: " << sum << endl;
-    for (list<char>::iterator i = fastWay.begin(); i != fastWay.end(); i++) {
-        cout << (*i) << " ";
-    }
+    cout << " Путь: " << sum << endl;
 }
 
