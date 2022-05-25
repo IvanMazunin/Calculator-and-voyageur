@@ -37,7 +37,7 @@ void Windows() {
 
 
 void Consol() {
-    char b;
+    char k;
     while (true) {
         
         cout << endl << "Для работы с программой выберите действие, которое хотите совершить:" << endl;
@@ -48,9 +48,9 @@ void Consol() {
         cout << "5. Поиск кратчайшего пути" << endl;
         cout << "6. Выход из программы" << endl << endl;
         cout << "Выполни: ";
-        cin >> b;
+        cin >> k;
         cout << endl;
-        switch (b)
+        switch (k)
         {
         case '1': 
         {
